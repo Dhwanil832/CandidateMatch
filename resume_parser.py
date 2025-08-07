@@ -4,12 +4,7 @@ import spacy
 
 # Load spaCy model for name detection (English)
 # Make sure to run: python -m spacy download en_core_web_sm
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    import spacy.cli
-    spacy.cli.download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 def extract_text_from_pdf(file) -> str:
     """
